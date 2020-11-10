@@ -1,0 +1,28 @@
+{
+  "name": "movie_api",
+  "version": "1.0.0",
+  "description": "A web application that allows users to search for various movies, sign up, update their user profiles, and create a list of favorite movies",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VeeMae/myFlix.git"
+  },
+  "keywords": [],
+  "author": "Venus",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VeeMae/myFlix/issues"
+  },
+  "homepage": "https://github.com/VeeMae/myFlix#readme",
+  "devDependencies": {
+    "eslint": "^7.13.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  }
+}
