@@ -30,7 +30,7 @@
         <tr>
           <th>Request</th>
           <th>URL Endpoint</th>
-          <th>HTTP Method</th>
+          <th>HTTP Method to Make Requests</th>
           <th>Request Body Data Format <br />Please note: use %20 for spaces</th>
           <th>Response Body Data Format</th>
         </tr>
@@ -56,7 +56,7 @@
             are no spaces, no need to include %20 i.e. /movies/Parasite
           </td>
           <td>
-            JSON object displaying the requested movie title: <br />
+            JSON object displaying the requested movie by title: <br />
             { 'title': 'The Matrix', 'year': '1999'}
           </td>
         </tr>
@@ -84,7 +84,7 @@
             <br />If there are no spaces, no need to include %20 i.e. /movies/directors/Woody
           </td>
           <td>
-            JSON object displaying data about the director: <br />
+            JSON object displaying data about the requested director: <br />
             { 'name': 'Bong Joon-Ho', 'movie': 'Parasite', 'age': '51', 'country': 'South Korea' }
           </td>
         </tr>
@@ -111,7 +111,10 @@
             JSON object <br />Type user information in this format: { 'name': 'Allan Jr. Doe',
             'age': '30', 'email': 'allandoe@gmail.com'}
           </td>
-          <td>A message indicating that the user has successfully updated their profile.</td>
+          <td>
+            JSON object displaying the user's updated information: <br />{ 'name': 'Allan Jr. Doe',
+            'age': '30', 'email': 'allandoe@gmail.com'}
+          </td>
         </tr>
         <tr>
           <td>Allow users to add a movie to their list of favorites</td>
@@ -139,12 +142,12 @@
           </td>
         </tr>
         <tr>
-          <td>Allow existing users to deregister</td>
+          <td>Allow existing users to deregister from the registry</td>
           <td>users/:username/:id</td>
           <td>DELETE</td>
           <td>
             None <br />
-            Type user information in this format: users/Allan%20/91ewh2pz
+            Type user's ID in this format: users/Allan%20/91ewh2pz
           </td>
           <td>
             A message indicating that the user has been successfully deleted from the registry.
