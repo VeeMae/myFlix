@@ -1,20 +1,156 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Documentation</title>
     <meta name="description" content="Instructions on how to use this movie web application." />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="" />
+    <link href="https://fonts.googleapis.com/css2?family=Marmelad&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
   </head>
 
   <body>
-    <h1>myFlix</h1>
-    <h2>Purpose</h2>
-    <p>
-      This web application is created for movie enthusiasts who want access to information about
-      different movies, directors, and genres. In essence, it as a movie inventory for users. They
-      can sign up, update their personal information, and create a list of their favorite movies.
-    </p>
+    <header>
+      <h1>The Official Documentation for myFlix Web Application</h1>
+    </header>
+
+    <section>
+      <h2>Purpose</h2>
+      <p>
+        This web application is created for movie enthusiasts who want access to information about
+        different movies, directors, and genres. In essence, it as a movie inventory for users.
+        Users can sign up, update their personal information, and create a list of their favorite
+        movies.
+      </p>
+    </section>
+
+    <section>
+      <h2>Please follow the formats as indicated in the table below.</h2>
+      <table>
+        <tr>
+          <th>Request</th>
+          <th>URL Endpoint</th>
+          <th>HTTP Method</th>
+          <th>Request Body Data Format <br />Please note: use %20 for spaces</th>
+          <th>Response Body Data Format</th>
+        </tr>
+
+        <tr>
+          <td>Return a list of all movies</td>
+          <td>/movies</td>
+          <td>GET</td>
+          <td>None <br />Simply attach /movies to the end of the URL</td>
+          <td>
+            JSON object displaying all available movies: <br />
+            { 'title': 'Parasite', 'year': '2019'}, <br />
+            { "title": "The Princess Bride", "year": "1987" },
+          </td>
+        </tr>
+        <tr>
+          <td>Return data about a specific movie by title</td>
+          <td>/movies/:title</td>
+          <td>GET</td>
+          <td>
+            None <br />
+            Simply attach the name of the movie in this format: /movies/The%20Matrix. <br />If there
+            are no spaces, no need to include %20 i.e. /movies/Parasite
+          </td>
+          <td>
+            JSON object displaying the requested movie title: <br />
+            { 'title': 'The Matrix', 'year': '1999'}
+          </td>
+        </tr>
+        <tr>
+          <td>Return data about a genre by name</td>
+          <td>/movies/genres/:name</td>
+          <td>GET</td>
+          <td>
+            None <br />
+            Simply attach the name of the genre in this format: /movies/genres/thriller
+          </td>
+          <td>
+            JSON object displaying movies that fall under the requested genre: <br />
+            { 'title': 'Parasite', 'year': '2019'}, <br />
+            { 'title': 'Get Out', 'year': '2017' }
+          </td>
+        </tr>
+        <tr>
+          <td>Return data about a director by name</td>
+          <td>/movies/directors/:name</td>
+          <td>GET</td>
+          <td>
+            None <br />
+            Simply attach the name of the director in this format: /movies/directors/Bong%20Joon-ho
+            <br />If there are no spaces, no need to include %20 i.e. /movies/directors/Woody
+          </td>
+          <td>
+            JSON object displaying data about the director: <br />
+            { 'name': 'Bong Joon-Ho', 'movie': 'Parasite', 'age': '51', 'country': 'South Korea' }
+          </td>
+        </tr>
+        <tr>
+          <td>Allow new users to register</td>
+          <td>/users</td>
+          <td>POST</td>
+          <td>
+            JSON object<br />
+            Type user information in this format: { 'name': 'Allan Doe', 'age': '25', 'email':
+            'allandoe@gmail.com'}
+          </td>
+          <td>
+            JSON object containing data about the user's newly written information, including an ID:
+            <br />{ 'id': '91ewh2pz', 'name': 'Allan Doe', 'age': '25', 'email':
+            'allandoe@gmail.com'}
+          </td>
+        </tr>
+        <tr>
+          <td>Allow users to update their user profile</td>
+          <td>/users/:username</td>
+          <td>PUT</td>
+          <td>
+            JSON object <br />Type user information in this format: { 'name': 'Allan Jr. Doe',
+            'age': '30', 'email': 'allandoe@gmail.com'}
+          </td>
+          <td>A message indicating that the user has successfully updated their profile.</td>
+        </tr>
+        <tr>
+          <td>Allow users to add a movie to their list of favorites</td>
+          <td>/users/:username/movies/:movieID</td>
+          <td>POST</td>
+          <td>
+            None <br />
+            Simply attach the movie ID in this format: /users/Allan%20Doe/movies/2z93yn
+          </td>
+          <td>
+            A message indicating that the user has successfully added a movie to their favorite
+            list.
+          </td>
+        </tr>
+        <tr>
+          <td>Allow users to remove a movie from their list of favorites</td>
+          <td>users/:username/movies/:movieID</td>
+          <td>DELETE</td>
+          <td>
+            None <br />Simply attach the movie ID in this format: /users/Allan%20Doe/movies/2z93yn
+          </td>
+          <td>
+            A message indicating that the user has successfully deleted a movie from their favorite
+            list.
+          </td>
+        </tr>
+        <tr>
+          <td>Allow existing users to deregister</td>
+          <td>users/:username/:id</td>
+          <td>DELETE</td>
+          <td>
+            None <br />
+            Type user information in this format: users/Allan%20/91ewh2pz
+          </td>
+          <td>
+            A message indicating that the user has been successfully deleted from the registry.
+          </td>
+        </tr>
+      </table>
+    </section>
   </body>
 </html>

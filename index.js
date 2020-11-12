@@ -1,48 +1,49 @@
 const express = require('express'),
+bodyParser = require('body-parser'),
     morgan = require('morgan');
 
 const app = express();
 
 let topMovies = [
     {
-        title: 'Parasite',
-        year: '2019'
+        'title': 'Parasite',
+        'year': '2019'
     },
     {
-        title: 'The Princess Bride',
-        year: '1987'
+        'title': 'The Princess Bride',
+        'year': '1987'
     },
     {
-        title: 'Jurassic Park',
-        year: '1993'
+        'title': 'Jurassic Park',
+        'year': '1993'
     },
     {
-        title: 'The Dark Knight',
-        year: '2008'
+        'title': 'The Dark Knight',
+        'year': '2008'
     },
     {
-        title: 'Legally Blonde',
-        year: '2011'
+        'title': 'Legally Blonde',
+        'year': '2011'
     },
     {
-        title: 'Lady Bird',
-        year: '2017'
+        'title': 'Lady Bird',
+        'year': '2017'
     },
     {
-        title: 'Get Out',
-        year: '2017'
+        'title': 'Get Out',
+        'year': '2017'
     },
     {
-        title: 'The Matrix',
-        year: '1999'
+        'title': 'The Matrix',
+        'year': '1999'
     },
     {
-        title: 'Toy Story',
-        year: '1995'
+        'title': 'Toy Story',
+        'year': '1995'
     },
     {
-        title: 'The Breakfast Club',
-        year: '1985'
+        'title': 'The Breakfast Club',
+        'year': '1985'
     },
 
 ];
@@ -52,12 +53,47 @@ app.use(morgan('common'));
 
 app.use(express.static('public'));
 
+app.use(bodyParser.json());
+
 app.get('/', (req, res) => {
     res.send('Welcome to myFlix!');
   });
 
 app.get('/movies', (req, res) => {
-    res.json(topMovies);
+    //res.json(topMovies);
+    res.send('Successful GET request returning data on all movies.')
+  });
+
+app.get('/movies/:title', (req, res) => {
+    res.send('Successful GET request returning data on ' + req.params.title)
+  });
+
+app.get('/movies/genres/:name', (req, res) => {
+    res.send('Successful GET request returning data on ' + req.params.name + ' movies')
+  });
+
+app.get('/movies/directors/:name', (req, res) => {
+    res.send('Successful GET request returning data on ' + req.params.name)
+  });
+
+app.post('/users', (req, res) => {
+    res.send('Successful POST request registering new user.')
+  });
+
+app.put('/users/:username/', (req, res) => {
+    res.send('Successful PUT request updating profile information for ' + req.params.username)
+  });
+
+app.post('/users/:username/movies/:movieID', (req, res) => {
+    res.send('Successful POST request adding movie with ID of ' + req.params.movieID + ' for ' + req.params.username)
+  });
+
+app.delete('/users/:username/movies/:movieID', (req, res) => {
+    res.send('Successful DELETE request deleting movie with ID of ' + req.params.movieID + ' for ' + req.params.username)
+  });
+
+app.delete('/users/:username/:id', (req, res) => {
+    res.send('Successful DELETE request deleting user ' + req.params.username + ' from the registry.')
   });
 
 app.use((err, req, res, next) => {
@@ -68,4 +104,3 @@ app.use((err, req, res, next) => {
 app.listen(8080, () =>{
     console.log('Your app is listening on port 8080.');
 });
-
