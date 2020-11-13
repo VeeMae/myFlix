@@ -60,8 +60,8 @@ app.get('/', (req, res) => {
   });
 
 app.get('/movies', (req, res) => {
-    //res.json(topMovies);
-    res.send('Successful GET request returning data on all movies.')
+    res.json(topMovies);
+    //res.send('Successful GET request returning data on all movies.')
   });
 
 app.get('/movies/:title', (req, res) => {
@@ -84,12 +84,8 @@ app.put('/users/:username/', (req, res) => {
     res.send('Successful PUT request updating profile information for ' + req.params.username)
   });
 
-app.post('/users/:username/movies/:movieID', (req, res) => {
-    res.send('Successful POST request adding movie with ID of ' + req.params.movieID + ' for ' + req.params.username)
-  });
-
-app.delete('/users/:username/movies/:movieID', (req, res) => {
-    res.send('Successful DELETE request deleting movie with ID of ' + req.params.movieID + ' for ' + req.params.username)
+app.put('/users/:username/movies/:movieID', (req, res) => {
+    res.send('Successful PUT request modifying movie list ' + ' for ' + req.params.username)
   });
 
 app.delete('/users/:username/:id', (req, res) => {
