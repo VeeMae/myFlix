@@ -68,11 +68,11 @@ app.get('/movies/:title', (req, res) => {
     res.send('Successful GET request returning data on ' + req.params.title)
   });
 
-app.get('/movies/genres/:name', (req, res) => {
+app.get('/movies/genre/:name', (req, res) => {
     res.send('Successful GET request returning data on ' + req.params.name + ' movies')
   });
 
-app.get('/movies/directors/:name', (req, res) => {
+app.get('/movies/director/:name', (req, res) => {
     res.send('Successful GET request returning data on ' + req.params.name)
   });
 
@@ -84,7 +84,7 @@ app.put('/users/:username/', (req, res) => {
     res.send('Successful PUT request updating profile information for ' + req.params.username)
   });
 
-app.put('/users/:username/movies/:movieID', (req, res) => {
+app.put('/users/:username/movies/:_id', (req, res) => {
     res.send('Successful PUT request modifying movie list ' + ' for ' + req.params.username)
   });
 

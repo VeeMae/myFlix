@@ -118,11 +118,11 @@
         </tr>
         <tr>
           <td>Allow users to add a movie to their list of favorites</td>
-          <td>/users/:username/movies/:movieID</td>
+          <td>/users/:username/movies/:_id</td>
           <td>PUT</td>
           <td>
             None <br />
-            Simply attach the movie ID in this format: /users/Allan%20Doe/movies/2z93yn
+            Simply attach the movie ID in this format: /users/Allan%20Doe/movies/ObjectId("2z93yn")
           </td>
           <td>
             A message indicating that the user has successfully added a movie to their favorite
@@ -131,10 +131,11 @@
         </tr>
         <tr>
           <td>Allow users to remove a movie from their list of favorites</td>
-          <td>users/:username/movies/:movieID</td>
+          <td>users/:username/movies/:_id</td>
           <td>PUT</td>
           <td>
-            Attach the movie ID in this format: /users/Allan%20Doe/movies/2z93yn <br />& <br />
+            Attach the movie ID in this format: /users/Allan%20Doe/movies/ObjectId("2z93yn") <br />&
+            <br />
             Include an empty JSON object <br />
             {}
           </td>
