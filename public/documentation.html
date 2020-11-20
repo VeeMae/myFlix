@@ -31,7 +31,9 @@
           <th>Request</th>
           <th>URL Endpoint</th>
           <th>HTTP Method to Make Requests</th>
-          <th>Request Body Data Format <br />Please note: use %20 for spaces</th>
+          <th>
+            Request Body Data Format <br />Please note: use %20 for spaces and use double quotes
+          </th>
           <th>Response Body Data Format</th>
         </tr>
 
@@ -39,53 +41,83 @@
           <td>Return a list of all movies</td>
           <td>/movies</td>
           <td>GET</td>
-          <td>None <br />Simply attach /movies to the end of the URL</td>
+          <td>
+            None <br />
+            <br />
+            Simply attach /movies to the end of the URL
+          </td>
           <td>
             JSON object displaying all available movies: <br />
-            { 'title': 'Parasite', 'year': '2019'}, <br />
-            { "title": "The Princess Bride", "year": "1987" },
+            <br />
+            { "_id": "5fb4868d2696c3a5f9416efc", <br />
+            "Title": "Parasite", <br />
+            "Description": "Greed and class discrimination threaten the newly formed symbiotic
+            relationship between the wealthy Park family and the destitute Kim clan.", <br />
+            "Featured": true }
           </td>
         </tr>
         <tr>
           <td>Return data about a specific movie by title</td>
-          <td>/movies/:title</td>
+          <td>/movies/:Title</td>
           <td>GET</td>
           <td>
             None <br />
-            Simply attach the name of the movie in this format: /movies/The%20Matrix. <br />If there
-            are no spaces, no need to include %20 i.e. /movies/Parasite
+            <br />
+            Simply attach the name of the movie in this format: <br />
+            /movies/The%20Matrix. <br />
+            <br />
+            If there are no spaces, no need to include %20 i.e. /movies/Parasite
           </td>
           <td>
             JSON object displaying the requested movie by title: <br />
-            { 'title': 'The Matrix', 'year': '1999'}
+            <br />
+            { "_id": "5fb4868d2696c3a5f9416efc", <br />
+            "Title": "Parasite", <br />
+            "Description": "Greed and class discrimination threaten the newly formed symbiotic
+            relationship between the wealthy Park family and the destitute Kim clan.", <br />
+            "Featured": true }
           </td>
         </tr>
         <tr>
           <td>Return data about a genre by name</td>
-          <td>/movies/genres/:name</td>
+          <td>/movies/genre/:Name</td>
           <td>GET</td>
           <td>
             None <br />
-            Simply attach the name of the genre in this format: /movies/genres/thriller
+            <br />
+            Simply attach the name of the genre in this format: /movies/genre/Thriller
           </td>
           <td>
-            JSON object displaying movies that fall under the requested genre: <br />
-            { 'title': 'Parasite', 'year': '2019'}, <br />
-            { 'title': 'Get Out', 'year': '2017' }
+            JSON object displaying movies that fall under the requested genre, including information
+            about the genre itself: <br />
+            <br />
+            { "_id": "5fb4868d2696c3a5f9416efc", <br />
+            "Title": "Parasite", <br />
+            "Description": "Greed and class discrimination threaten the newly formed symbiotic
+            relationship between the wealthy Park family and the destitute Kim clan.", <br />
+            "Featured": true }
           </td>
         </tr>
         <tr>
           <td>Return data about a director by name</td>
-          <td>/movies/directors/:name</td>
+          <td>/movies/director/:Name</td>
           <td>GET</td>
           <td>
             None <br />
-            Simply attach the name of the director in this format: /movies/directors/Bong%20Joon-ho
-            <br />If there are no spaces, no need to include %20 i.e. /movies/directors/Woody
+            <br />
+            Simply attach the name of the director in this format: /movies/director/Bong%20Joon-ho
+            <br />
+            <br />
+            If there are no spaces, no need to include %20 i.e. /movies/director/Woody
           </td>
           <td>
-            JSON object displaying data about the requested director: <br />
-            { 'name': 'Bong Joon-Ho', 'movie': 'Parasite', 'age': '51', 'country': 'South Korea' }
+            JSON object displaying data about the requested director, including movies from the
+            director: <br />
+            <br />
+            { "name": "Bong Joon-Ho", <br />
+            "movie": "Parasite", <br />
+            "age": "51", <br />
+            "country": "South Korea" }
           </td>
         </tr>
         <tr>
@@ -94,13 +126,22 @@
           <td>POST</td>
           <td>
             JSON object<br />
-            Type user information in this format: { 'name': 'Allan Doe', 'age': '25', 'email':
-            'allandoe@gmail.com'}
+            <br />
+            Type user information in this format: <br />
+            <br />
+            { "name": "Allan Doe", <br />
+            "password": "2qpe0!", <br />
+            "email": "allandoe@gmail.com", <br />
+            "birthday": "02-16-1995" }
           </td>
           <td>
             JSON object containing data about the user's newly written information, including an ID:
-            <br />{ 'id': '91ewh2pz', 'name': 'Allan Doe', 'age': '25', 'email':
-            'allandoe@gmail.com'}
+            <br />
+            <br />{ "id": "91ewh2pz", <br />
+            "name": "Allan Doe", <br />
+            "password": "2qpe0!", <br />
+            "email": "allandoe@gmail.com", <br />
+            "birthday": "02-16-1995" }
           </td>
         </tr>
         <tr>
@@ -108,49 +149,79 @@
           <td>/users/:username</td>
           <td>PUT</td>
           <td>
-            JSON object <br />Type user information in this format: { 'name': 'Allan Jr. Doe',
-            'age': '30', 'email': 'allandoe@gmail.com'}
+            JSON object <br />
+            <br />
+            Type user information in this format: <br />
+            <br />
+            { "name": "Allan Doe", <br />
+            "password": "4!t01qz", <br />
+            "email": "allandoeupdatedemail@gmail.com", <br />
+            "birthday": "02-16-1995" }
           </td>
           <td>
-            JSON object displaying the user's updated information: <br />{ 'name': 'Allan Jr. Doe',
-            'age': '30', 'email': 'allandoe@gmail.com'}
+            JSON object displaying the user's updated information: <br />
+            <br />
+            { "id": "91ewh2pz", <br />
+            "name": "Allan Doe", <br />
+            "password": "4!t01qz", <br />
+            "email": "allandoeupdatedemail@gmail.com", <br />
+            "birthday": "02-16-1995" }
           </td>
         </tr>
         <tr>
           <td>Allow users to add a movie to their list of favorites</td>
-          <td>/users/:username/movies/:_id</td>
+          <td>/users/:username/movies/:movieID</td>
           <td>PUT</td>
           <td>
             None <br />
-            Simply attach the movie ID in this format: /users/Allan%20Doe/movies/ObjectId("2z93yn")
+            <br />
+            Simply attach the movie ID in this format:
+            /users/Allan%20Doe/movies/5fb489032696c3a5f9416eff
           </td>
           <td>
-            A message indicating that the user has successfully added a movie to their favorite
-            list.
+            JSON object displaying the user's updated FavoriteMovies list. <br />
+            <br />
+            { "FavoriteMovies": [ "5fb489032696c3a5f9416eff" ], <br />
+            "_id": "5fb6f9678281c837f0b71246", <br />
+            "username": "testuser", <br />
+            "password": "testpassword", <br />
+            "email": "testemail@gmail.com", <br />
+            "birthday": "1994-02-19T08:00:00.000Z" }
           </td>
         </tr>
         <tr>
           <td>Allow users to remove a movie from their list of favorites</td>
-          <td>users/:username/movies/:_id</td>
+          <td>/users/:username/movies/delete/:movieID</td>
           <td>PUT</td>
           <td>
-            Attach the movie ID in this format: /users/Allan%20Doe/movies/ObjectId("2z93yn") <br />&
+            None <br />
             <br />
-            Include an empty JSON object <br />
-            {}
+            Simply attach the movie ID in this format:
+            /users/Allan%20Doe/movies/delete/5fb489032696c3a5f9416eff
           </td>
           <td>
-            A message indicating that the user has successfully deleted a movie from their favorite
-            list.
+            JSON object displaying the user's updated FavoriteMovies list.
+            <br />
+            <br />
+            { "FavoriteMovies": [], <br />
+            "_id": "5fb6f9678281c837f0b71246", <br />
+            "username": "testuser", <br />
+            "password": "testpassword", <br />
+            "email": "testemail@gmail.com", <br />
+            "birthday": "1994-02-19T08:00:00.000Z" }
           </td>
         </tr>
         <tr>
           <td>Allow existing users to deregister from the registry</td>
-          <td>users/:username/:id</td>
+          <td>/users/:username</td>
           <td>DELETE</td>
           <td>
             None <br />
-            Type user's ID in this format: users/Allan%20/91ewh2pz
+            <br />
+            Type user's username in this format: <br />
+            /users/Allan%20Doe <br />
+            <br />
+            If there are no spaces, no need to include %20 i.e. /users/Woody
           </td>
           <td>
             A message indicating that the user has been successfully deleted from the registry.
