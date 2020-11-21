@@ -151,7 +151,7 @@ app.put('/users/:username/movies/:movieID', passport.authenticate('jwt', { sessi
   Users.findOneAndUpdate({ username: req.params.username }, {
      $push: { FavoriteMovies: req.params.movieID}
    },
-   { new: true }, // This line makes sure that the updated document is returned
+   { new: true }, //This line makes sure that the updated document is returned
   (err, updatedUser) => {
     if (err) {
       console.error(err);
@@ -167,7 +167,7 @@ app.put('/users/:username/movies/delete/:movieID', passport.authenticate('jwt', 
   Users.findOneAndUpdate({ username: req.params.username }, {
      $pull: { FavoriteMovies: req.params.movieID }
    },
-   { new: true }, // This line makes sure that the updated document is returned
+   { new: true }, //This line makes sure that the updated document is returned
   (err, updatedUser) => {
     if (err) {
       console.error(err);
