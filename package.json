@@ -4,7 +4,6 @@
   "description": "A web application that allows users to search for various movies, sign up, update their user profiles, and create a list of favorite movies",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
   },
   "repository": {
