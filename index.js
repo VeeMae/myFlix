@@ -9,6 +9,7 @@ const app = express();
 const passport = require('passport');
 require('./passport');
 const cors = require('cors');
+app.use(cors());
 const {check, validationResult} = require('express-validator');
 
 // mongoose.connect('mongodb://localhost:27017/myFlixDB', { useNewUrlParser: true, useUnifiedTopology: true });
@@ -17,7 +18,7 @@ mongoose.connect(process.env.CONNECTION_URI, { useNewUrlParser: true, useUnified
 app.use(morgan('common'));
 app.use(express.static('public'));
 app.use(bodyParser.json());
-app.use(cors());
+
 
 let auth = require('./auth')(app);
 
@@ -102,7 +103,7 @@ app.post('/users',
           Users
             .create({
               username: req.body.username,
-              password: req.body.password,
+              password: hashedPassword,
               email: req.body.email,
               birthday: req.body.birthday
             })
