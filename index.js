@@ -8,12 +8,15 @@ const Users = Models.User;
 const app = express();
 const passport = require('passport');
 require('./passport');
+const cors = require('cors');
+const {check, validationResult} = require('express-validator');
 
 mongoose.connect('mongodb://localhost:27017/myFlixDB', { useNewUrlParser: true, useUnifiedTopology: true });
 
 app.use(morgan('common'));
 app.use(express.static('public'));
 app.use(bodyParser.json());
+app.use(cors());
 
 let auth = require('./auth')(app);
 
@@ -75,7 +78,21 @@ app.get('/movies/director/:Name', passport.authenticate('jwt', { session: false 
 
 //ALLOW NEW USERS TO REGISTER
 //Doesn't need authentication as it would allow first-time users to register
-app.post('/users', (req, res) => {
+app.post('/users',
+[
+  check('username', 'Username is required').isLength({min: 4}),
+  check('username', 'Username contains non alphanumeric characters - not allowed.').isAlphanumeric(),
+  check('password', 'Password is required').not().isEmpty(),
+  check('email', 'Email does not appear to be valid').isEmail()
+],(req, res) => {
+
+  let errors = validationResult(req);
+
+  if (!errors.isEmpty()) {
+    return res.status(422).json({errors: errors.array()});
+  }
+
+  let hashedPassword = Users.hashPassword(req.body.password);
   Users.findOne({ username: req.body.username })
     .then((user) => {
        if (user) {
@@ -89,10 +106,10 @@ app.post('/users', (req, res) => {
               birthday: req.body.birthday
             })
             .then((user) =>{res.status(201).json(user) })
-          .catch((error) => {
-            console.error(error);
-            res.status(500).send('Error: ' + error);
-          })
+            .catch((error) => {
+              console.error(error);
+              res.status(500).send('Error: ' + error);
+          });
         }
       })
       .catch((error) => {
@@ -126,7 +143,22 @@ app.get('/users/:username', passport.authenticate('jwt', { session: false }), (r
 });
 
 //ALLOW USERS TO UPDATE THEIR USER PROFILE
-app.put('/users/:username', passport.authenticate('jwt', { session: false }), (req, res) => {
+app.put('/users/:username',
+[
+  check('username', 'Username is required').isLength({min: 4}),
+  check('username', 'Username contains non alphanumeric characters - not allowed.').isAlphanumeric(),
+  check('password', 'Password is required').not().isEmpty(),
+  check('email', 'Email does not appear to be valid').isEmail(),
+  check('birthday', 'Birthday does not appear to be in a valid format').isISO8601().toDate()
+],
+passport.authenticate('jwt', { session: false }), (req, res) => {
+
+  let errors = validationResult(req);
+
+  if (!errors.isEmpty()) {
+    return res.status(422).json({errors: errors.array()});
+  }
+
   Users.findOneAndUpdate({ username: req.params.username }, { $set:
     {
       username: req.body.username,
@@ -199,6 +231,7 @@ app.use((err, req, res, next) => {
     res.status(500).send('Something isn\'t quite right with the page!');
   });
 
-app.listen(8080, () =>{
-    console.log('Your app is listening on port 8080.');
-});
+  const port = process.env.PORT || 8080;
+  app.listen(port, '0.0.0.0',() => {
+   console.log('Listening on Port ' + port);
+  });
