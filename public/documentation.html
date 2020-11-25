@@ -21,15 +21,18 @@
     <section>
       <h2>Purpose</h2>
       <p>
-        This web application is created for movie enthusiasts who want access to information about
-        different movies, directors, and genres. In essence, it as a movie inventory for users.
-        Users can sign up, update their personal information, and create a list of their favorite
-        movies.
+        myFix is a web application that allows users to sign up, login, update their personal
+        information, and create a list of their favorite movies.
       </p>
     </section>
 
     <section>
-      <h2>Please follow the formats as indicated in the table below.</h2>
+      <h2>
+        Please follow the formats as indicated in the table below. For first time users, you can
+        register following the request that says: 'Allow new users to register'. In order to have
+        access to the other endpoints, you must use the token you receive once you've logged in to
+        get authorization. Please keep in mind it only lasts for 1 day.
+      </h2>
       <table>
         <tr>
           <th>Request</th>
@@ -140,6 +143,29 @@
           </td>
           <td>
             JSON object containing data about the user's newly written information, including an ID:
+            <br />
+            <br />{ "id": "91ewh2pz", <br />
+            "name": "Allan Doe", <br />
+            "password": "2qpe0!", <br />
+            "email": "allandoe@gmail.com", <br />
+            "birthday": "02-16-1995" }
+          </td>
+        </tr>
+        <tr>
+          <td>Allow users to login</td>
+          <td>/login</td>
+          <td>POST</td>
+          <td>
+            HTTP Params<br />
+            <br />
+            Make sure to add the '?' after the login endpoint. Then write
+            username=[your_username]&password=[your_password] in this format:<br />
+            <br />
+            /login?username=testuser2&password=1234567
+          </td>
+          <td>
+            JSON object containing data about the user's information and a token that has been
+            created for them:
             <br />
             <br />{ "id": "91ewh2pz", <br />
             "name": "Allan Doe", <br />
