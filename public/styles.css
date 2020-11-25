@@ -19,10 +19,10 @@ h1 {
 h2 {
   font-family: "DM Serif Display", serif;
   font-size: 1.5rem;
-  line-height: 1.5rem;
 }
 p {
   font-size: 1.3rem;
+  line-height: 1.6rem;
 }
 table {
   width: 90%;
@@ -40,4 +40,5 @@ th,
 td {
   padding: 20px;
   font-size: 1.3rem;
+  line-height: 1.6rem;
 }
