@@ -80,7 +80,7 @@ app.get('/movies/director/:Name', passport.authenticate('jwt', { session: false 
 
 //ALLOW NEW USERS TO REGISTER
 //Doesn't need authentication as it would allow first-time users to register
-app.post('/register',
+app.post('/users',
 [
   check('username', 'Username is required').isLength({min: 4}),
   check('username', 'Username contains non alphanumeric characters - not allowed.').isAlphanumeric(),
