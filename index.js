@@ -12,15 +12,13 @@ const cors = require('cors');
 const path = require("path");
 app.use(cors());
 const {check, validationResult} = require('express-validator');
+app.use(morgan('common'));
+// app.use(express.static('public'));
+app.use(bodyParser.json());
+
 
 //mongoose.connect('mongodb://localhost:27017/myFlixDB', { useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.connect(process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true });
-
-app.use(morgan('common'));
-app.use(express.static('public'));
-app.use(express.static(path.join('/client', 'dist')));
-app.use(bodyParser.json());
-
 
 let auth = require('./auth')(app);
 
@@ -28,7 +26,7 @@ let auth = require('./auth')(app);
 
 //Homepage
 app.get('/', (req, res) => {
-  app.use('/dist', express.static('dist'));
+  res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'))
 });
 
 //RETURN A LIST OF ALL MOVIES
