@@ -16,7 +16,7 @@ const {check, validationResult} = require('express-validator');
 mongoose.connect(process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 app.use(morgan('common'));
-app.use(express.static('client'));
+// app.use(express.static('client'));
 app.use(bodyParser.json());
 
 
@@ -26,7 +26,7 @@ let auth = require('./auth')(app);
 
 //Homepage
 app.get('/', (req, res) => {
-  app.use(express.static('client', 'dist'));
+  res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
 });
 
 //RETURN A LIST OF ALL MOVIES
