@@ -17,7 +17,7 @@ mongoose.connect(process.env.CONNECTION_URI, { useNewUrlParser: true, useUnified
 
 app.use(morgan('common'));
 app.use(express.static('public'));
-app.use(express.static('client'));
+app.use(express.static(path.join('/client', 'dist')));
 app.use(bodyParser.json());
 
 
