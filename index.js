@@ -13,7 +13,7 @@ const path = require("path");
 app.use(cors());
 const {check, validationResult} = require('express-validator');
 app.use(morgan('common'));
-// app.use(express.static('public'));
+app.use(express.static('public'));
 app.use(bodyParser.json());
 
 
