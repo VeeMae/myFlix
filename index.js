@@ -26,7 +26,8 @@ let auth = require('./auth')(app);
 
 //Homepage
 app.get('/', (req, res) => {
-  app.use(express.static(path.join('client', 'dist')));
+  app.use(express.static(path.join('dist', 'index.html')));
+});
 
 //RETURN A LIST OF ALL MOVIES
 app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) => {
