@@ -1,0 +1,66 @@
+.movie-view {
+  font-size: 1.5rem;
+  margin: 0 auto;
+  text-align: left;
+  font-family: "Alegreya Sans", sans-serif;
+}
+
+.movie-row {
+  margin-top: 2rem;
+}
+
+.detailCard {
+  margin: 0 auto;
+  margin-bottom: 7rem;
+  padding: 0;
+  text-align: left;
+  width: 50%;
+  color: #000;
+}
+
+.btn.director-btn,
+.btn.genre-btn,
+.btn.add-btn,
+.btn.movie-view-home-btn {
+  display: block;
+  width: 50%;
+  margin: 2rem;
+}
+
+.btns {
+  margin-top: 2rem;
+}
+
+@media all and (max-width: 576px) {
+  .detailCard {
+    margin: 1rem 1rem;
+    margin-bottom: 1.5rem;
+    width: 90%;
+    padding: 0;
+  }
+  .movie-view {
+    font-size: 1.3rem;
+  }
+  .btn.director-btn,
+  .btn.genre-btn,
+  .btn.add-btn,
+  .btn.movie-view-home-btn {
+    display: block;
+    width: 90%;
+    margin: 1.5rem auto;
+  }
+}
+@media all and (min-width: 577px) and (max-width: 1024px) {
+  .detail-view.card {
+    max-width: 50%;
+    margin: 0 auto;
+  }
+  .btn.director-btn,
+  .btn.genre-btn,
+  .btn.add-btn,
+  .btn.movie-view-home-btn {
+    display: block;
+    width: 65%;
+    margin: 1rem auto;
+  }
+}

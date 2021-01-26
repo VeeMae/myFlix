@@ -1,0 +1,95 @@
+.profile-view {
+  text-align: left;
+  margin-top: 0;
+}
+
+.profile-row {
+  margin: 0 auto;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  display: block;
+}
+.profileCard {
+  margin: 1.5rem 0;
+  display: block;
+  width: 20rem;
+  color: #000;
+}
+
+.profile-details-btn {
+  margin: 0.5rem auto;
+}
+
+.update-button,
+.delete-user-button,
+.home-button {
+  width: 25%;
+  display: inline-block;
+  margin: 0 1rem 1rem 0;
+  margin-top: 3rem;
+}
+
+.faveMovies {
+  margin: 2rem auto;
+}
+
+div.faveMovies-container {
+  margin-top: 4rem;
+}
+
+.faveMovies_card {
+  width: 14rem;
+  margin: 1rem;
+}
+
+@media all and (max-width: 576px) {
+  .update-button,
+  .delete-user-button,
+  .home-button {
+    width: 50%;
+    display: block;
+    margin: 1rem auto;
+  }
+  .profileCard {
+    margin: 1.5rem auto;
+    width: 16rem;
+  }
+  .profile-view,
+  .faveMovies {
+    text-align: center;
+  }
+
+  .faveMovies {
+    display: block;
+    margin: 0 auto;
+  }
+
+  div.faveMovies-container {
+    margin: 1rem auto;
+    display: block;
+  }
+
+  .faveMovies_card {
+    margin: 2rem auto;
+    width: 16rem;
+  }
+}
+@media all and (min-width: 577px) and (max-width: 1024px) {
+  .btn.director-btn,
+  .btn.genre-btn,
+  .btn.add-btn,
+  .btn.movie-view-home-btn {
+    display: block;
+    width: 60%;
+    margin: 1rem auto;
+  }
+
+  div.faveMovies-container {
+    margin-top: 3rem auto;
+  }
+
+  .faveMovies_card {
+    margin: 1rem;
+    width: 13rem;
+  }
+}

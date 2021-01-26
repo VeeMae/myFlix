@@ -1,0 +1,63 @@
+#login-form {
+  text-align: left;
+  margin: 5rem 0rem;
+}
+
+#login-form h1 {
+  font-size: 3rem;
+  text-align: center;
+  color: #edcdab;
+}
+
+#login-form h3 {
+  margin: 2rem 0 1rem 0;
+  font-size: 1.3rem;
+  color: #edcdab;
+}
+
+.login-btn,
+.register-btn {
+  display: inline-block;
+  width: 50%;
+}
+
+input#formBasicPassword.form-control,
+input#formBasicUsername.form-control {
+  width: 50%;
+}
+
+.form {
+  padding-left: 70px;
+}
+
+@media all and (max-width: 992px) {
+  #login-form {
+    margin: 5rem auto;
+  }
+  #login-form h1 {
+    padding-left: none;
+    font-size: 3rem;
+    margin-bottom: 5rem;
+  }
+
+  .form {
+    padding: 0;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  input#formBasicPassword.form-control,
+  input#formBasicUsername.form-control {
+    width: 65%;
+    margin: 0 auto;
+  }
+  #login-form h3 {
+    margin: 2rem auto;
+    font-size: 1.4rem;
+  }
+  .login-btn,
+  .register-btn {
+    display: inline-block;
+    width: 40%;
+  }
+} ;

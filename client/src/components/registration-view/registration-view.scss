@@ -1,0 +1,53 @@
+.register-row {
+  margin: 5rem 0rem;
+}
+.register-button,
+.register-return-button {
+  display: inline-block;
+  margin-top: 1.5rem;
+  text-align: center;
+  width: 50%;
+}
+.register-header {
+  text-align: center;
+  color: #edcdab;
+}
+
+.registration-form label {
+  color: #edcdab;
+}
+
+input#formBasicPassword.form-control,
+input#formBasicUsername.form-control,
+input#formBasicEmail.form-control,
+input#formBasicBirthday.form-control {
+  width: 50%;
+}
+
+@media all and (max-width: 992px) {
+  .text-muted {
+    font-size: 0.8rem;
+  }
+  .row.register-row {
+    margin: 2rem auto;
+    text-align: center;
+  }
+
+  .register-header {
+    margin-bottom: 2rem;
+  }
+
+  .register-button,
+  .register-return-button {
+    margin: 1rem auto;
+    width: 55%;
+  }
+
+  input#formBasicPassword.form-control,
+  input#formBasicUsername.form-control,
+  input#formBasicEmail.form-control,
+  input#formBasicBirthday.form-control {
+    width: 75%;
+    margin: 0 auto;
+  }
+} ;

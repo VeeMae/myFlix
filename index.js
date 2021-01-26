@@ -26,7 +26,7 @@ let auth = require('./auth')(app);
 
 //Homepage
 app.get('/', (req, res) => {
-  res.send('Welcome to myFlix!');
+  app.use('/client/dist', express.static('dist'));
 });
 
 //RETURN A LIST OF ALL MOVIES

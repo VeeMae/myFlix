@@ -1,0 +1,17 @@
+$bg-color: #201e1f;
+$text-color: #fff;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $bg-color;
+  color: $text-color;
+  font-family: "Oswald", sans-serif;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+}

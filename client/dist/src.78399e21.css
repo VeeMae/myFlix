@@ -1,0 +1,488 @@
+.movieCard {
+  max-width: 30%;
+  margin: 4rem auto;
+  padding: 1rem;
+  background-color: #fff;
+  color: #000;
+  height: auto;
+  font-family: "Alegreya Sans", sans-serif;
+}
+
+h1.card-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #000;
+}
+
+div.card-body {
+  font-size: 1.4rem;
+}
+
+.card-button {
+  margin: 1rem auto;
+}
+
+.btn {
+  margin: 0 auto;
+  display: block;
+  width: 100%;
+}
+
+@media all and (max-width: 576px) {
+  .movieCard {
+    max-width: 90%;
+    margin: 1.5rem auto;
+    padding: 0;
+  }
+
+  h1.card-title {
+    font-size: 1.5rem;
+  }
+
+  div.card-body {
+    font-size: 1.2rem;
+  }
+}
+@media all and (min-width: 577px) and (max-width: 1024px) {
+  .movieCard {
+    max-width: 45%;
+  }
+
+  div.card-body {
+    font-size: 1rem;
+  }
+}
+.movie-view {
+  font-size: 1.5rem;
+  margin: 0 auto;
+  text-align: left;
+  font-family: "Alegreya Sans", sans-serif;
+}
+
+.movie-row {
+  margin-top: 2rem;
+}
+
+.detailCard {
+  margin: 0 auto;
+  margin-bottom: 7rem;
+  padding: 0;
+  text-align: left;
+  width: 50%;
+  color: #000;
+}
+
+.btn.director-btn,
+.btn.genre-btn,
+.btn.add-btn,
+.btn.movie-view-home-btn {
+  display: block;
+  width: 50%;
+  margin: 2rem;
+}
+
+.btns {
+  margin-top: 2rem;
+}
+
+@media all and (max-width: 576px) {
+  .detailCard {
+    margin: 1rem 1rem;
+    margin-bottom: 1.5rem;
+    width: 90%;
+    padding: 0;
+  }
+
+  .movie-view {
+    font-size: 1.3rem;
+  }
+
+  .btn.director-btn,
+.btn.genre-btn,
+.btn.add-btn,
+.btn.movie-view-home-btn {
+    display: block;
+    width: 90%;
+    margin: 1.5rem auto;
+  }
+}
+@media all and (min-width: 577px) and (max-width: 1024px) {
+  .detail-view.card {
+    max-width: 50%;
+    margin: 0 auto;
+  }
+
+  .btn.director-btn,
+.btn.genre-btn,
+.btn.add-btn,
+.btn.movie-view-home-btn {
+    display: block;
+    width: 65%;
+    margin: 1rem auto;
+  }
+}
+#login-form {
+  text-align: left;
+  margin: 5rem 0rem;
+}
+
+#login-form h1 {
+  font-size: 3rem;
+  text-align: center;
+  color: #edcdab;
+}
+
+#login-form h3 {
+  margin: 2rem 0 1rem 0;
+  font-size: 1.3rem;
+  color: #edcdab;
+}
+
+.login-btn,
+.register-btn {
+  display: inline-block;
+  width: 50%;
+}
+
+input#formBasicPassword.form-control,
+input#formBasicUsername.form-control {
+  width: 50%;
+}
+
+.form {
+  padding-left: 70px;
+}
+
+@media all and (max-width: 992px) {
+  #login-form {
+    margin: 5rem auto;
+  }
+
+  #login-form h1 {
+    padding-left: none;
+    font-size: 3rem;
+    margin-bottom: 5rem;
+  }
+
+  .form {
+    padding: 0;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  input#formBasicPassword.form-control,
+input#formBasicUsername.form-control {
+    width: 65%;
+    margin: 0 auto;
+  }
+
+  #login-form h3 {
+    margin: 2rem auto;
+    font-size: 1.4rem;
+  }
+
+  .login-btn,
+.register-btn {
+    display: inline-block;
+    width: 40%;
+  }
+}
+.register-row {
+  margin: 5rem 0rem;
+}
+
+.register-button,
+.register-return-button {
+  display: inline-block;
+  margin-top: 1.5rem;
+  text-align: center;
+  width: 50%;
+}
+
+.register-header {
+  text-align: center;
+  color: #edcdab;
+}
+
+.registration-form label {
+  color: #edcdab;
+}
+
+input#formBasicPassword.form-control,
+input#formBasicUsername.form-control,
+input#formBasicEmail.form-control,
+input#formBasicBirthday.form-control {
+  width: 50%;
+}
+
+@media all and (max-width: 992px) {
+  .text-muted {
+    font-size: 0.8rem;
+  }
+
+  .row.register-row {
+    margin: 2rem auto;
+    text-align: center;
+  }
+
+  .register-header {
+    margin-bottom: 2rem;
+  }
+
+  .register-button,
+.register-return-button {
+    margin: 1rem auto;
+    width: 55%;
+  }
+
+  input#formBasicPassword.form-control,
+input#formBasicUsername.form-control,
+input#formBasicEmail.form-control,
+input#formBasicBirthday.form-control {
+    width: 75%;
+    margin: 0 auto;
+  }
+}
+.director-view {
+  font-size: 1.5rem;
+  margin: 0 auto;
+  text-align: left;
+  font-family: "Alegreya Sans", sans-serif;
+}
+
+.director-row {
+  margin: 1rem auto;
+}
+
+.director-card {
+  margin: 1rem 0;
+  color: #000;
+}
+
+.director-btn {
+  margin: 0 auto;
+}
+
+.label {
+  color: #a07e77;
+}
+
+@media all and (max-width: 576px) {
+  .director-view {
+    font-size: 1.3rem;
+  }
+}
+.genre-view {
+  font-size: 1.5rem;
+  margin: 0 auto;
+  text-align: left;
+  font-family: "Alegreya Sans", sans-serif;
+}
+
+.genre-row {
+  margin: 1rem auto;
+}
+
+.genreCard {
+  margin: 1rem 0;
+  color: #000;
+}
+
+.genre-btn {
+  margin: 0 auto;
+}
+
+@media all and (max-width: 576px) {
+  .genre-view {
+    font-size: 1.3rem;
+  }
+}
+.profile-view {
+  text-align: left;
+  margin-top: 0;
+}
+
+.profile-row {
+  margin: 0 auto;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  display: block;
+}
+
+.profileCard {
+  margin: 1.5rem 0;
+  display: block;
+  width: 20rem;
+  color: #000;
+}
+
+.profile-details-btn {
+  margin: 0.5rem auto;
+}
+
+.update-button,
+.delete-user-button,
+.home-button {
+  width: 25%;
+  display: inline-block;
+  margin: 0 1rem 1rem 0;
+  margin-top: 3rem;
+}
+
+.faveMovies {
+  margin: 2rem auto;
+}
+
+div.faveMovies-container {
+  margin-top: 4rem;
+}
+
+.faveMovies_card {
+  width: 14rem;
+  margin: 1rem;
+}
+
+@media all and (max-width: 576px) {
+  .update-button,
+.delete-user-button,
+.home-button {
+    width: 50%;
+    display: block;
+    margin: 1rem auto;
+  }
+
+  .profileCard {
+    margin: 1.5rem auto;
+    width: 16rem;
+  }
+
+  .profile-view,
+.faveMovies {
+    text-align: center;
+  }
+
+  .faveMovies {
+    display: block;
+    margin: 0 auto;
+  }
+
+  div.faveMovies-container {
+    margin: 1rem auto;
+    display: block;
+  }
+
+  .faveMovies_card {
+    margin: 2rem auto;
+    width: 16rem;
+  }
+}
+@media all and (min-width: 577px) and (max-width: 1024px) {
+  .btn.director-btn,
+.btn.genre-btn,
+.btn.add-btn,
+.btn.movie-view-home-btn {
+    display: block;
+    width: 60%;
+    margin: 1rem auto;
+  }
+
+  div.faveMovies-container {
+    margin-top: 3rem auto;
+  }
+
+  .faveMovies_card {
+    margin: 1rem;
+    width: 13rem;
+  }
+}
+.updateProfile-view {
+  margin: 0 auto;
+}
+
+.update-form {
+  margin: 3rem auto;
+}
+
+.update-btn,
+.updateHome-btn {
+  display: block;
+  width: 30%;
+  margin: 1rem 0;
+}
+
+@media all and (max-width: 576px) {
+  .updateProfile-view h2 {
+    text-align: center;
+    margin: 1rem auto;
+    margin-bottom: 2rem;
+  }
+
+  .update-form {
+    margin: 2rem auto;
+    text-align: center;
+  }
+
+  .update-btn,
+.updateHome-btn {
+    width: 50%;
+    margin: 1rem auto;
+  }
+}
+@media all and (min-width: 577px) and (max-width: 1024px) {
+  .updateProfile-view h2 {
+    text-align: center;
+    margin: 1rem auto;
+    margin-bottom: 2rem;
+  }
+
+  .update-form {
+    margin: 2rem auto;
+    text-align: center;
+  }
+
+  .update-btn,
+.updateHome-btn {
+    width: 20%;
+    margin: 1rem auto;
+  }
+
+  .updateProfile-view input#formBasicPassword.form-control,
+.updateProfile-view input#formBasicUsername.form-control,
+.updateProfile-view input#formBasicEmail.form-control,
+.updateProfile-view input#formBasicBirthday.form-control {
+    width: 50%;
+    margin: 0 auto;
+  }
+}
+.main-view {
+  margin: 0 auto;
+}
+
+.navbar {
+  margin: 1.5rem auto;
+  padding: 0;
+}
+
+.navbar-dark .navbar-nav a.nav-link {
+  color: #edcdab;
+}
+
+a {
+  text-decoration: none;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #201e1f;
+  color: #fff;
+  font-family: "Oswald", sans-serif;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=/src.78399e21.css.map */

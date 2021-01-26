@@ -1,0 +1,56 @@
+.updateProfile-view {
+  margin: 0 auto;
+}
+
+.update-form {
+  margin: 3rem auto;
+}
+
+.update-btn,
+.updateHome-btn {
+  display: block;
+  width: 30%;
+  margin: 1rem 0;
+}
+
+@media all and (max-width: 576px) {
+  .updateProfile-view h2 {
+    text-align: center;
+    margin: 1rem auto;
+    margin-bottom: 2rem;
+  }
+  .update-form {
+    margin: 2rem auto;
+    text-align: center;
+  }
+
+  .update-btn,
+  .updateHome-btn {
+    width: 50%;
+    margin: 1rem auto;
+  }
+}
+@media all and (min-width: 577px) and (max-width: 1024px) {
+  .updateProfile-view h2 {
+    text-align: center;
+    margin: 1rem auto;
+    margin-bottom: 2rem;
+  }
+  .update-form {
+    margin: 2rem auto;
+    text-align: center;
+  }
+
+  .update-btn,
+  .updateHome-btn {
+    width: 20%;
+    margin: 1rem auto;
+  }
+  .updateProfile-view input#formBasicPassword.form-control,
+  .updateProfile-view input#formBasicUsername.form-control,
+  .updateProfile-view input#formBasicEmail.form-control,
+  .updateProfile-view input#formBasicBirthday.form-control {
+    width: 50%;
+    margin: 0 auto;
+  }
+}
