@@ -26,7 +26,7 @@ let auth = require('./auth')(app);
 
 //Homepage
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, "client", "dist", "index.html"));;
+  app.use(express.static('client'));
 });
 
 //RETURN A LIST OF ALL MOVIES
