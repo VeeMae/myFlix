@@ -16,7 +16,7 @@ const {check, validationResult} = require('express-validator');
 mongoose.connect(process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 app.use(morgan('common'));
-// app.use(express.static('client'));
+app.use(express.static(__dirname));
 app.use(bodyParser.json());
 
 
