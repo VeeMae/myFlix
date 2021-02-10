@@ -16,6 +16,7 @@ app.use(morgan('common'));
 app.use(express.static('public'));
 app.use(bodyParser.json());
 
+// Important to add cors at the top before all code!!
 const cors = require('cors');
 app.use(cors());
 
