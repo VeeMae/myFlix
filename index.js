@@ -26,13 +26,13 @@ app.use(cors());
 /* REQUESTS */
 
 //Homepage
-// app.get('/', (req, res) => {
-//   res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'))
-// });
-
 app.get('/', (req, res) => {
-  res.send('Welcome to myFlix!');
+  res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'))
 });
+
+// app.get('/', (req, res) => {
+//   res.send('Welcome to myFlix!');
+// });
 
 //RETURN A LIST OF ALL MOVIES
 app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) => {
