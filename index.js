@@ -26,7 +26,7 @@ app.use(cors());
 /* REQUESTS */
 
 //Homepage
-app.get('/', cors(), (req, res) => {
+app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'))
 });
 
