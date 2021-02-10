@@ -1,10 +1,12 @@
-const express = require('express'),
-bodyParser = require('body-parser'),
-    morgan = require('morgan');
+const express = require('express');
+const bodyParser = require('body-parser');
+const morgan = require('morgan');
 const mongoose = require('mongoose');
 const Models = require('./models.js');
+
 const Movies = Models.Movie;
 const Users = Models.User;
+
 const app = express();
 const passport = require('passport');
 require('./passport');
@@ -14,20 +16,19 @@ app.use(morgan('common'));
 app.use(express.static('public'));
 app.use(bodyParser.json());
 
+const cors = require('cors');
+app.use(cors());
 
 //mongoose.connect('mongodb://localhost:27017/myFlixDB', { useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.connect(process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 let auth = require('./auth')(app);
 
-const cors = require('cors');
-app.use(cors());
-
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
+// app.use(function(req, res, next) {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//   next();
+// });
 
 /* REQUESTS */
 
