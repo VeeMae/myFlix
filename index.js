@@ -10,7 +10,6 @@ const passport = require('passport');
 require('./passport');
 const cors = require('cors');
 const path = require("path");
-app.use(cors());
 const {check, validationResult} = require('express-validator');
 app.use(morgan('common'));
 app.use(express.static('public'));
@@ -21,6 +20,8 @@ app.use(bodyParser.json());
 mongoose.connect(process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 let auth = require('./auth')(app);
+
+app.use(cors());
 
 /* REQUESTS */
 
@@ -237,7 +238,7 @@ app.use((err, req, res, next) => {
     res.status(500).send('Something isn\'t quite right with the page!');
   });
 
-  const port = process.env.PORT || 8080 || 4200;
+  const port = process.env.PORT || 8080;
   app.listen(port, '0.0.0.0',() => {
    console.log('Listening on Port ' + port);
   });
