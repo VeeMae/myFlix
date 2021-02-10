@@ -237,7 +237,7 @@ app.use((err, req, res, next) => {
     res.status(500).send('Something isn\'t quite right with the page!');
   });
 
-  const port = process.env.PORT || 8080;
+  const port = process.env.PORT || 8080 || 4200;
   app.listen(port, '0.0.0.0',() => {
    console.log('Listening on Port ' + port);
   });
