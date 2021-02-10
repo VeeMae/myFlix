@@ -2,19 +2,19 @@ const jwtSecret = 'your_jwt_secret';
 const jwt = require('jsonwebtoken'),
   passport = require('passport');
 
-require('./passport'); 
+require('./passport');
 
 let generateJWTToken = (user) => {
   return jwt.sign(user, jwtSecret, {
     subject: user.username,
-    expiresIn: '1d', 
+    expiresIn: '1d',
     algorithm: 'HS256'
   });
 }
 
 /* POST login. */
 module.exports = (router) => {
-  router.post('/login', (req, res) => {
+  router.post('/login', cors(), (req, res) => {
     passport.authenticate('local', { session: false }, (error, user, info) => {
       if (error || !user) {
         return res.status(400).json({

@@ -8,7 +8,6 @@ const Users = Models.User;
 const app = express();
 const passport = require('passport');
 require('./passport');
-const cors = require('cors');
 const path = require("path");
 const {check, validationResult} = require('express-validator');
 app.use(morgan('common'));
@@ -21,29 +20,13 @@ mongoose.connect(process.env.CONNECTION_URI, { useNewUrlParser: true, useUnified
 
 let auth = require('./auth')(app);
 
-// app.use(cors());
-
-const allowedOrigins = ['http://localhost:4200'];
-
-app.use(cors({
-  origin: function(origin, callback){
-    // allow requests with no origin
-    // (like mobile apps or curl requests)
-    if(!origin) return callback(null, true);
-    if(allowedOrigins.indexOf(origin) === -1){
-      const msg = 'The CORS policy for this site does not ' +
-                'allow access from the specified Origin.';
-      return callback(new Error(msg), false);
-    }
-    return callback(null, true);
-  }
-}));
-
+const cors = require('cors');
+app.use(cors());
 
 /* REQUESTS */
 
 //Homepage
-app.get('/', (req, res) => {
+app.get('/', cors(), (req, res) => {
   res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'))
 });
 
