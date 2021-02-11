@@ -211,7 +211,7 @@ app.put('/users/:username/movies/:movieID', passport.authenticate('jwt', { sessi
 
 //ALLOW USERS TO SEE THEIR FAVE MOVIES
 app.get('/users/:username/movies', passport.authenticate('jwt', { session: false }), (req, res) => {
-    Users.findOne({ username: req.params.username, FavoriteMovies })
+    Users.find({ username: req.params.username}, {FavoriteMovies})
         .then((users, movie) => {
             res.status(201).json(users, movie);
         })
