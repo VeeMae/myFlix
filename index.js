@@ -210,16 +210,17 @@ app.put('/users/:username/movies/:movieID', passport.authenticate('jwt', { sessi
 });
 
 //ALLOW USERS TO SEE THEIR FAVE MOVIES
-app.get('/users/:username/movies', passport.authenticate('jwt', { session: false }), (req, res) => {
-    Users.find({ username: req.params.username}, {FavoriteMovies})
-        .then((movie) => {
-            res.status(201).json(movie);
-        })
-        .catch((err) => {
-            console.error(err);
-            res.status(500).send('Error: ' + err);
-    })
-});
+// Doesn't do anything for now
+// app.get('/users/:username/movies', passport.authenticate('jwt', { session: false }), (req, res) => {
+//     Users.find({ username: req.params.username}, {FavoriteMovies})
+//         .then((movie) => {
+//             res.status(201).json(movie);
+//         })
+//         .catch((err) => {
+//             console.error(err);
+//             res.status(500).send('Error: ' + err);
+//     })
+// });
 
 //ALLOW USERS TO REMOVE A MOVIE FROM THEIR LIST OF FAVORITES
 app.delete('/users/:username/movies/delete/:movieID', passport.authenticate('jwt', { session: false }), (req, res) => {
