@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
 import { Col, Row } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
@@ -38,18 +37,17 @@ export function LoginView(props) {
                 props.onLoggedIn(data);
             })
             .catch(e => {
-                console.log(e, 'The user does not exist or incorrect credentials.');
-                alert('Please try again. Check that you have entered your credentials correctly.')
+                // console.log(e, 'The user does not exist or incorrect credentials.');
+                alert('Error loggin in. Please try again. Check that you have entered your credentials correctly.')
             });
 };
 
-
     return (
-
         <Container fluid id='login-form'>
             <Row>
                 <Col sm={12} lg={6}>
                     <h1>Welcome to MyFlix</h1>
+                    <p>For documentation of this app, please go to https://myflix-movie-application.herokuapp.com/documentation.html</p>
                 </Col>
                 <Col sm={12} lg={6} className='form'>
                     <Form noValidate validated={validated}>
