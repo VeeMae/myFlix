@@ -47,7 +47,6 @@ export function LoginView(props) {
             <Row>
                 <Col sm={12} lg={6}>
                     <h1>Welcome to MyFlix</h1>
-                    <p>For documentation of this app, please go to https://myflix-movie-application.herokuapp.com/documentation.html</p>
                 </Col>
                 <Col sm={12} lg={6} className='form'>
                     <Form noValidate validated={validated}>

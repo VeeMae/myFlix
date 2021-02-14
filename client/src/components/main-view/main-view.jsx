@@ -129,6 +129,7 @@ export class MainView extends React.Component {
 
                     <Route path='/users/:username/update' render={() => <UpdateProfile movies={movies} />} />
 
+                    <p>For documentation of this app, please go to https://myflix-movie-application.herokuapp.com/documentation.html</p>
                 </div>
             </Router>
         </Container>
