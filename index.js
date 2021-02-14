@@ -16,7 +16,7 @@ app.use(morgan('common'));
 app.use(express.static('public'));
 app.use(bodyParser.json());
 
-// Important to add cors at the top before all code!!
+// Important to add cors at the top before rest of code!!
 const cors = require('cors');
 app.use(cors());
 
@@ -25,22 +25,11 @@ mongoose.connect(process.env.CONNECTION_URI, { useNewUrlParser: true, useUnified
 
 let auth = require('./auth')(app);
 
-// app.use(function(req, res, next) {
-//   res.header("Access-Control-Allow-Origin", "*");
-//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-//   next();
-// });
-
 /* REQUESTS */
-
 //Homepage
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'))
 });
-
-// app.get('/', (req, res) => {
-//   res.send('Welcome to myFlix!');
-// });
 
 //RETURN A LIST OF ALL MOVIES
 app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) => {
@@ -133,17 +122,17 @@ app.post('/users',
       });
   });
 
-//GET ALL USERS
-app.get('/users', passport.authenticate('jwt', { session: false }), (req, res) => {
-  Users.find()
-    .then((users) => {
-      res.status(201).json(users);
-    })
-    .catch((err) => {
-      console.error(err);
-      res.status(500).send('Error: ' + err);
-    });
-});
+//GET ALL USERS (Not necessary for user to have access to)
+// app.get('/users', passport.authenticate('jwt', { session: false }), (req, res) => {
+//   Users.find()
+//     .then((users) => {
+//       res.status(201).json(users);
+//     })
+//     .catch((err) => {
+//       console.error(err);
+//       res.status(500).send('Error: ' + err);
+//     });
+// });
 
 //GET A USER BY USERNAME
 app.get('/users/:username', passport.authenticate('jwt', { session: false }), (req, res) => {
@@ -208,19 +197,6 @@ app.put('/users/:username/movies/:movieID', passport.authenticate('jwt', { sessi
     }
   });
 });
-
-//ALLOW USERS TO SEE THEIR FAVE MOVIES
-// Doesn't do anything for now
-// app.get('/users/:username/movies', passport.authenticate('jwt', { session: false }), (req, res) => {
-//     Users.find({ username: req.params.username}, {FavoriteMovies})
-//         .then((movie) => {
-//             res.status(201).json(movie);
-//         })
-//         .catch((err) => {
-//             console.error(err);
-//             res.status(500).send('Error: ' + err);
-//     })
-// });
 
 //ALLOW USERS TO REMOVE A MOVIE FROM THEIR LIST OF FAVORITES
 app.delete('/users/:username/movies/delete/:movieID', passport.authenticate('jwt', { session: false }), (req, res) => {
