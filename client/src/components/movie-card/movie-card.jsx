@@ -1,11 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
 import './movie-card.scss';
+
+/**
+ * Renders the movie card view, showcasing the image, title, and description.
+ */
 
 export class MovieCard extends React.Component {
     render() {
@@ -31,6 +34,9 @@ export class MovieCard extends React.Component {
     }
 }
 
+/**
+ * Proptypes to maintain consistency with data handling.
+ */
 MovieCard.propTypes = {
     movie: PropTypes.shape({
         Title: PropTypes.string.isRequired,

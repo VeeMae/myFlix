@@ -2,12 +2,16 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-
 import Form from 'react-bootstrap/Form';
 import { Button } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 
 import './update-profile.scss';
+
+/**
+ * Function to update user's profile within the registry.
+ * @param {*} props
+ */
 
 export function UpdateProfile(props) {
     const [username, updateUsername] = useState('');
@@ -116,6 +120,9 @@ export function UpdateProfile(props) {
     )
 }
 
+/**
+ * Proptypes to maintain consistency with data handling.
+ */
 UpdateProfile.propTypes = {
     user: PropTypes.shape({
         username: PropTypes.string,

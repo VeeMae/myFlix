@@ -2,7 +2,6 @@ import React from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-
 import Container from 'react-bootstrap/Container';
 import { Row } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
@@ -10,8 +9,11 @@ import Card from 'react-bootstrap/Card';
 
 import './profile-view.scss';
 
-export class ProfileView extends React.Component {
+/**
+ * Renders the profile view, which shows the user's information, list of favorite movies, and an option to update profile.
+ */
 
+export class ProfileView extends React.Component {
     constructor() {
         super();
 
@@ -163,10 +165,13 @@ export class ProfileView extends React.Component {
             </Row>
 
         </Container>
-    );
-}
+        );
+    }
 }
 
+/**
+ * Proptypes to maintain consistency with data handling.
+ */
 ProfileView.propTypes = {
     user: PropTypes.shape({
         username: PropTypes.string.isRequired,

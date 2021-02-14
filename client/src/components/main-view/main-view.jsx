@@ -3,11 +3,8 @@ import axios from 'axios';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-
 import { setMovies } from '../../actions/actions';
-
 import MoviesList from '../movies-list/movies-list';
-import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import { LoginView } from '../login-view/login-view';
 import { RegistrationView } from '../registration-view/registration-view';
@@ -15,13 +12,16 @@ import { DirectorView } from '../director-view/director-view';
 import { GenreView } from '../genre-view/genre-view';
 import { ProfileView } from '../profile-view/profile-view';
 import { UpdateProfile } from '../update-profile/update-profile';
-
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import { Nav } from 'react-bootstrap';
 
 import './main-view.scss';
 
+/**
+ * Renders the main view, which shows the login page and an option to register.
+ * For a more detailed documentation of the API being used, please go to https://myflix-movie-application.herokuapp.com/documentation.html
+ */
 
 //Declares the component by extending the React Component class to inherit all of its lifecyle methods
 export class MainView extends React.Component {
@@ -81,28 +81,20 @@ export class MainView extends React.Component {
         let { user } = this.state;
 
         return (
-
           <Container>
             <Router>
                 <div className="main-view row">
-
-
                 <Container>
                     <Navbar variant='dark' expand='lg'>
-
                         <Navbar.Brand href='/'>myFlix</Navbar.Brand>
                         <Navbar.Toggle aria-controls='basic-navbar-nav' />
-
                         <Navbar.Collapse id='basic-navbar-nav'>
-
                             <Nav>
                                 <Nav.Link as={Link} to='/'>Home</Nav.Link>
                                 <Nav.Link as={Link} to='/users/:username'>Profile</Nav.Link>
                                 <Nav.Link onClick={()=> this.logOut()}>Logout</Nav.Link>
                             </Nav>
-
                         </Navbar.Collapse>
-
                     </Navbar>
                 </Container>
 
@@ -128,8 +120,6 @@ export class MainView extends React.Component {
                     <Route exact path='/users/:username' render={() => <ProfileView movies={movies} />} />
 
                     <Route path='/users/:username/update' render={() => <UpdateProfile movies={movies} />} />
-
-                    <p>For documentation of this app, please go to https://myflix-movie-application.herokuapp.com/documentation.html</p>
                 </div>
             </Router>
         </Container>

@@ -5,6 +5,10 @@ import { setFilter } from '../../actions/actions';
 
 import Form from 'react-bootstrap/Form';
 
+/**
+ * Function to filter movies in the search field.
+ * @param {*} props
+ */
 function VisibilityFilterInput(props) {
     return <Form.Control
         onChange={e => props.setFilter(e.target.value)}

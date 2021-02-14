@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-
 import Container from 'react-bootstrap/Container';
 import { Row } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
@@ -9,8 +8,11 @@ import Card from 'react-bootstrap/Card';
 
 import './genre-view.scss';
 
-export class GenreView extends React.Component {
+/**
+ * Renders the genre view, which shows details about the genre of the selected movie.
+ */
 
+export class GenreView extends React.Component {
     constructor() {
         super();
 
@@ -18,9 +20,7 @@ export class GenreView extends React.Component {
     }
 
     render() {
-
         const { genre } = this.props;
-
         return (
 
             <Container className="genre-view">
@@ -50,10 +50,12 @@ export class GenreView extends React.Component {
                 </Row>
             </Container>
         );
-
     }
 }
 
+/**
+ * Proptypes to maintain consistency with data handling.
+ */
 GenreView.propTypes = {
     Genre: PropTypes.shape({
         Name: PropTypes.string.isRequired,

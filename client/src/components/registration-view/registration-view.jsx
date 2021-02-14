@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import PropTypes from 'prop-types';
-
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -11,7 +10,10 @@ import Row from 'react-bootstrap/Row';
 
 import './registration-view.scss';
 
-
+/**
+ * Renders the registration view, which allows users to register to the applicaiton prior to using it.
+ * @param {*} props
+ */
 export function RegistrationView(props) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -112,6 +114,9 @@ export function RegistrationView(props) {
     )
 }
 
+/**
+ * Proptypes to maintain consistency with data handling.
+ */
 RegistrationView.propTypes = {
     user: PropTypes.shape({
         username: PropTypes.string.isRequired,

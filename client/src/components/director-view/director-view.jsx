@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-
 import Container from 'react-bootstrap/Container';
 import { Row } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
@@ -9,8 +8,11 @@ import Card from 'react-bootstrap/Card';
 
 import './director-view.scss';
 
-export class DirectorView extends React.Component {
+/**
+ * Renders the director view, which shows details about the director of the selected movie.
+ */
 
+export class DirectorView extends React.Component {
     constructor() {
         super();
 
@@ -18,9 +20,7 @@ export class DirectorView extends React.Component {
     }
 
     render() {
-
         const { director } = this.props;
-
         return (
 
             <Container className="director-view">
@@ -50,14 +50,14 @@ export class DirectorView extends React.Component {
                         <Button variant='light' className='director-home-btn'>Home</Button>
                     </Link>
                 </Row>
-
-
             </Container>
         );
-
     }
 }
 
+/**
+ * Proptypes to maintain consistency with data handling.
+ */
 DirectorView.propTypes = {
     Director: PropTypes.shape({
         Name: PropTypes.string.isRequired,

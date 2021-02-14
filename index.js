@@ -25,8 +25,12 @@ mongoose.connect(process.env.CONNECTION_URI, { useNewUrlParser: true, useUnified
 
 let auth = require('./auth')(app);
 
-/* REQUESTS */
-//Homepage
+/**
+ *  The following functions are used to make requests to the API to retrieve specific endpoints.
+ * For a more comprehensive documentation, please go to https://myflix-movie-application.herokuapp.com/documentation.html
+ */
+
+//RETURN HOMEPAGE
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'))
 });

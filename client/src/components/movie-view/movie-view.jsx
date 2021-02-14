@@ -2,13 +2,16 @@ import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import { Col, Row } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 
 import './movie-view.scss';
+
+/**
+ * Renders the movie view, which displays details about the selected movie. including links to more information about the movie's genre and director, as well as an 'add to favorites' button.
+ */
 
 export class MovieView extends React.Component {
     constructor(props) {
@@ -35,9 +38,7 @@ export class MovieView extends React.Component {
 
     render() {
         const { movie } = this.props;
-
         if (!movie) return null;
-
         return (
 
             <Container className="movie-view">
@@ -90,6 +91,9 @@ export class MovieView extends React.Component {
     }
 }
 
+/**
+ * Proptypes to maintain consistency with data handling.
+ */
 MovieView.propTypes = {
     movie: PropTypes.shape({
         Title: PropTypes.string.isRequired,

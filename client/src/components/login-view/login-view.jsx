@@ -9,6 +9,11 @@ import Button from 'react-bootstrap/Button';
 
 import './login-view.scss';
 
+/**
+ * Renders the login view, which sends a request to the server for authentication before rendering the movie view
+ * @param {*} props
+ */
+
 export function LoginView(props) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -88,6 +93,9 @@ export function LoginView(props) {
     );
 }
 
+/**
+ * Proptypes to maintain consistency with data handling.
+ */
 LoginView.propTypes = {
     user: PropTypes.shape({
         username: PropTypes.string.isRequired,
