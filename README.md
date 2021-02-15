@@ -4,12 +4,10 @@
 
 Build the server-side component of a movies web application, called myFlix. The app will provide users with access to information about different movies, directors, and genres. Users can also sign up, update their profile, and create a list of their favorite movies.
 
+### myFlix Demo
+![myFlix Demo](/myFlix.gif)
 ### MongoDB Movies Collection
 ![MongoDB movie collection](/mongoDB.png)
-### Login Page
-![myFlix login page](/login-pg.png)
-### Registration Page
-![myFlix registration page](/registration-pg.png)
 
 ## How To Use
 
