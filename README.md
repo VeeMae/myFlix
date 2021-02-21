@@ -1,4 +1,4 @@
-# myFlix (fullstack version)
+# myFlix (server-side, includes client-side for fullstack rendering )
 
 ## Objective
 
